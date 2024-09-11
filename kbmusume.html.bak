@@ -82,37 +82,33 @@
       
     </div><!-- End Breadcrumbs -->
 
+
     <section class="single-page">
-      
-      <div id="portfolio-details" class="portfolio-details">
       <div class="container" data-aos="fade-up">
-        <div class="row justify-content-between gy-2">
+        <div class="row">
           <div class="col-lg-8">
-            <div class="position-relative">
-              <div class="slides-1 portfolio-details-slider swiper">
-                <div class="swiper-wrapper align-items-center">
-                  
-                  <div class="swiper-slide">
-                    <img src="static/picture/kbmusume.png" alt="">
-                  </div>
-
-                  <div class="swiper-slide">
-                    <img src="static/picture/kbmusume.png" alt="">
-                  </div>
-
-                </div>
-                <div class="swiper-pagination"></div>
+            <h2 class="title">
+              <a href="">卖萌社看板娘</a>
+            </h2>
+            <div class="d-flex align-items-center details-post-data">
+              <div class="post-meta d-flex">
+                <p class="post-date">
+                  <time datetime="2022-01-01">2024/09/09</time>
+                </p>
+                <p class="post-sperator"> - </p>
+                <p class="post-author">卖萌社</p>
               </div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
             </div>
-            <div class="portfolio-description">
-              <h2>简介</h2>
+            <hr>
+            <div class="col-lg-12">
+              <img src="static/picture/kbmusume.png" class="img-fluid mb-4" alt="">
+            </div>
+            <h3>简介</h3>
             <p>
               卖萌社是一个网络虚拟社团，主要活动在QQ群、新浪微博等网络社区。
-              <br />
+
               主要是一个让没有社团孤单跑展的基友们能够相互认识，跑展时可以更加愉♂悦，还有跑展之后和日常的互黑。
-              <br />
+
               卖萌社写作卖萌社读作掉节操。
             </p>
 
@@ -154,42 +150,31 @@
             </ul>
 
             <p></p>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 project-deatils-aside">
-            <div class="portfolio-info">
-              <h3>卖萌社看板娘</h3>
-              <ul>
-                <li><strong>发布日期</strong> <span>2012/02/01</span></li>
-                <li><strong>更细日期</strong> <span>2024/09/09</span></li>
-                <li><strong>外部链接</strong> </li>
-                <li><a href="https://zh.moegirl.org.cn/%E5%8D%96%E8%90%8C%E7%A4%BE%E7%9C%8B%E6%9D%BF%E5%A8%98" class="btn-visit align-self-start">萌娘百科</a></li>
-              </ul>
-            </div>
-              <!--<div class="testimonial-item">
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-                <div>
-                  <img src="static/picture/testimonial-1.jpg" class="testimonial-img" alt="">
-                  <h3>Jhone Wilsson</h3>
-                  <h4>Graphic Designer</h4>
-                </div>-->
-            </div>
-          </div>
-
         </div>
-
+        <div class="col-lg-4">
+          <div class="blog-sidbar">
+            <div class="search-form">
+                <form action="#">
+                    <input type="text" placeholder="搜索...">
+                    <button><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <hr>
+            <h3>阅读推荐</h3>
+            <ul>
+              <li><a href="#"><i class="bi bi bi-arrow-right-square-fill"></i> 新logo发布</a></li>
+              <li><a href="#"><i class="bi bi bi-arrow-right-square-fill"></i> 看板娘形象发布</a></li>
+              <li><a href="about.html"><i class="bi bi bi-arrow-right-square-fill"></i> 关于我们</a></li>
+              <li><a href="#"><i class="bi bi bi-arrow-right-square-fill"></i> 摄影团队</a></li>
+              <li><a href="#"><i class="bi bi bi-arrow-right-square-fill"></i> 漫展场照</a></li>
+              <li><a href="https://zh.moegirl.org.cn/%E5%8D%96%E8%90%8C%E7%A4%BE%E7%9C%8B%E6%9D%BF%E5%A8%98" target="_blank" rel="noopener noreferrer"><i class="bi bi bi-arrow-right-square-fill"></i> 看板娘萌娘百科</a></li>
+              <li><a href="https://www.jiecaoshe.com/" target="_blank" rel="noopener noreferrer"><i class="bi bi bi-arrow-right-square-fill"></i> 技术支持：结草社</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-
+      </div>
     </section>
-
-  </main><!-- End #main -->
 
   <!-- Footer -->
   <footer id="footer" class="main-footer">
