@@ -197,6 +197,11 @@ img {
   gap: 8px;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
 .navbar ul {
   display: flex;
   align-items: center;
@@ -247,6 +252,8 @@ img {
   }
 
   .navbar {
+    display: flex !important;
+    align-items: stretch !important;
     position: fixed;
     top: 0;
     right: -100%;
@@ -739,6 +746,16 @@ img {
 
   .footer-list a:hover {
     padding-left: 0;
+  }
+
+  .footer-bottom .row {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-nav {
+    justify-content: center;
   }
 }
 
