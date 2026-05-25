@@ -72,9 +72,12 @@
           <div data-aos="fade-right">
             <div class="image-gallery">
               <div class="main-image">
-                <img id="currentImage" src="static/picture/kbmusume.png" alt="看板娘">
+                <a href="static/picture/kbmusume.png" class="glightbox" data-gallery="kbm-main" data-title="看板娘 - 主图">
+                  <img id="currentImage" src="static/picture/kbmusume.png" alt="看板娘">
+                </a>
               </div>
               <div class="thumbnail-list">
+                <a href="static/picture/kbmusume-1.png" class="glightbox" data-gallery="kbm-main" data-title="看板娘 - 设定图" style="display: none;"></a>
                 <img class="thumbnail active" src="static/picture/kbmusume.png" onclick="changeImage(this)" alt="看板娘">
                 <img class="thumbnail" src="static/picture/kbmusume-1.png" onclick="changeImage(this)" alt="看板娘">
               </div>
@@ -199,7 +202,7 @@
                 </li>
               </ul>
 
-              <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--color-border); display: flex; justify-content: flex-end;">
+              <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--color-border);">
                 <a href="https://zh.moegirl.org.cn/%E5%8D%96%E8%90%8C%E7%A4%BE%E7%9C%8B%E6%9D%BF%E5%A8%98" target="_blank" rel="noopener noreferrer" class="btn-visit" style="display: inline-flex; padding: 12px 28px; background: var(--gradient-primary); color: #fff; font-size: 14px; font-weight: 600; border-radius: var(--radius-md); text-decoration: none; transition: var(--transition-base);">
                   <i class="bi bi-book" style="margin-right: 8px;"></i> 萌娘百科
                 </a>
@@ -221,13 +224,9 @@
               卖萌社是一个网络虚拟社团，主要活动在QQ群、新浪微博等网络社区。<br /><br />
               专注跑展团队，如果你一个人没有动力、不好意思、没伴一起去看漫展的话，就来找我们吧！</p>
             <div class="footer-social">
-              <a href="https://weibo.com/u/3146514722" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center;">
-                <img src="static/image/weibo.svg" alt="微博" width="18" height="18" style="display: block; filter: brightness(0) invert(1);">
-              </a>
-              <a href="https://xhslink.com/m/66LyRs9VNyS" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center;">
-                <img src="static/image/xhs.svg" alt="小红书" width="16" height="16" style="display: block; filter: brightness(0) invert(1);">
-              </a>
-              <a href="mailto:mail@maimengshe.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-envelope"></i></a>
+              <a href="https://weibo.com/u/3146514722" target="_blank" rel="noopener noreferrer"><i class="bi bi-sina-weibo"></i></a>
+              <a href="https://weibo.com/u/3146514722" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
+              <a href="https://weibo.com/u/3146514722" target="_blank" rel="noopener noreferrer"><i class="bi bi-envelope"></i></a>
             </div>
           </div>
           <div>
@@ -235,7 +234,6 @@
             <ul class="footer-list">
               <li><a href="https://maimengshe.podcast.xyz/" target="_blank">播客</a></li>
               <li><a href="https://weibo.com/u/3146514722" target="_blank" rel="noopener noreferrer">微博</a></li>
-              <li><a href="https://xhslink.com/m/66LyRs9VNyS" target="_blank" rel="noopener noreferrer">小红书</a></li>
               <li><a href="#">漫展场照</a></li>
               <li><a href="#">摄影团队</a></li>
               <li><a href="https://www.jiecaoshe.com/" target="_blank">技术支持</a></li>
@@ -254,7 +252,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <div class="row" style="display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+        <div class="row" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: nowrap; gap: 16px;">
           <div class="copyright">Copyright &copy; 2012-2026.maimengshe.com All rights reserved.</div>
           <ul class="footer-nav">
             <li>技术支持：<a href="https://www.jiecaoshe.com/" target="_blank" rel="noopener noreferrer">结草社</a></li>
@@ -279,12 +277,23 @@
   <script>
     var currentImageIndex = 0;
     var imageInterval;
+    var lightbox;
+
+    // 图片信息数组
+    var galleryImages = [
+      { src: 'static/picture/kbmusume.png', title: '看板娘 - 主图' },
+      { src: 'static/picture/kbmusume-1.png', title: '看板娘 - 设定图' }
+    ];
 
     function changeImage(thumbnail) {
       var mainImage = document.getElementById('currentImage');
+      var mainImageLink = document.querySelector('.main-image .glightbox');
       mainImage.style.opacity = '0';
       setTimeout(function() {
         mainImage.src = thumbnail.src;
+        if (mainImageLink) {
+          mainImageLink.href = thumbnail.src;
+        }
         document.querySelectorAll('.thumbnail').forEach(function(thumb) {
           thumb.classList.remove('active');
         });
@@ -321,6 +330,25 @@
     imageInterval = setInterval(autoSwitchImage, 5000);
   </script>
   <script src="static/js/main.js"></script>
+  <script>
+    // 直接配置图片数组，确保正确的循环功能
+    lightbox = GLightbox({
+      elements: [
+        {
+          href: 'static/picture/kbmusume.png',
+          title: '看板娘 - 主图'
+        },
+        {
+          href: 'static/picture/kbmusume-1.png',
+          title: '看板娘 - 设定图'
+        }
+      ],
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: true,
+      selector: '.glightbox'
+    });
+  </script>
 
   <style>
     .image-gallery {
@@ -376,7 +404,45 @@
       box-shadow: var(--shadow-md);
       color: #fff;
     }
+    .portfolio-slider {
+      width: 100%;
+      padding-bottom: 50px;
+    }
+    .portfolio-slider .swiper-slide {
+      width: 60%;
+      transition: all 0.3s ease;
+    }
+    .portfolio-slider .swiper-slide:not(.swiper-slide-active) {
+      opacity: 0.6;
+      transform: scale(0.95);
+    }
+    .portfolio-slider .swiper-pagination {
+      bottom: 10px;
+    }
+    .portfolio-slider .swiper-pagination-bullet {
+      background: var(--color-primary);
+      opacity: 0.5;
+    }
+    .portfolio-slider .swiper-pagination-bullet-active {
+      background: var(--color-primary);
+      opacity: 1;
+    }
+    .portfolio-slider .swiper-button-next,
+    .portfolio-slider .swiper-button-prev {
+      color: var(--color-primary);
+      background: rgba(255, 255, 255, 0.1);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+    }
+    .portfolio-slider .swiper-button-next:hover,
+    .portfolio-slider .swiper-button-prev:hover {
+      background: rgba(255, 107, 138, 0.2);
+    }
     @media (max-width: 991px) {
+      .portfolio-slider .swiper-slide {
+        width: 90%;
+      }
       .page-header {
         flex-direction: column !important;
         text-align: center;
@@ -409,8 +475,25 @@
       section {
         padding: 60px 0;
       }
+      .portfolio-slider .swiper-slide {
+        width: 100%;
+      }
+    }
+    .portfolio-slider .swiper-button-next:hover,
+    .portfolio-slider .swiper-button-prev:hover {
+      background: rgba(255, 107, 138, 0.2);
+    }
+    .glightbox {
+      display: block;
+      cursor: zoom-in;
+    }
+    .glightbox:hover {
+      opacity: 1;
+    }
+    .gclose, .gnext, .gprev {
+      background: rgba(0, 0, 0, 0.6) !important;
+      border-radius: 50% !important;
     }
   </style>
 </body>
-
 </html>
