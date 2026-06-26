@@ -450,38 +450,11 @@
       .portfolio-slider .swiper-slide {
         width: 90%;
       }
-      .page-header {
-        flex-direction: column !important;
-        text-align: center;
-      }
-      .page-header ol {
-        justify-content: center;
-      }
-      .pages-images {
-        order: -1;
-      }
-      .pages-images img {
-        max-width: 200px;
-      }
       .single-page .container > div {
         grid-template-columns: 1fr !important;
       }
-      .footer-content > .row {
-        grid-template-columns: 1fr !important;
-        text-align: center;
-      }
-      .footer-social {
-        justify-content: center;
-      }
-      .footer-title::after {
-        left: 50% !important;
-        transform: translateX(-50%);
-      }
     }
     @media (max-width: 575px) {
-      section {
-        padding: 60px 0;
-      }
       .portfolio-slider .swiper-slide {
         width: 100%;
       }
@@ -492,4 +465,15 @@
     }
     .glightbox {
       display: block;
-       
+      cursor: zoom-in;
+    }
+    .glightbox:hover {
+      opacity: 1;
+    }
+    .gclose, .gnext, .gprev {
+      background: rgba(0, 0, 0, 0.6) !important;
+      border-radius: 50% !important;
+    }
+  </style>
+</body>
+</html>
