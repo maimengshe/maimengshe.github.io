@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-CN">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="author" content="卖萌社">
-  <meta name="description" content="卖萌社留言板 - 给我们留言">
-  <meta name="keywords" content="动漫,ACG,卖萌社,留言板,留言,反馈">
+  <meta name="description" content="卖萌社留言板：给我们留言，分享你的想法和建议。卖萌社是一个网络虚拟动漫社团，专注漫展跑展组队与 ACG 资讯分享。">
+  <meta name="keywords" content="卖萌社,留言板,留言,反馈,动漫社团,联系我们,跑展">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <title>留言板 | 卖萌社</title>
   <link rel="shortcut icon" href="favicon.ico">
+  <link rel="canonical" href="https://maimengshe.com/messenger.html">
+
+  <!-- Open Graph / 社交分享 -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="卖萌社">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="卖萌社留言板 - 给我们留言">
+  <meta property="og:description" content="分享你的想法和建议，与卖萌社交流互动。">
+  <meta property="og:url" content="https://maimengshe.com/messenger.html">
+  <meta property="og:image" content="https://maimengshe.com/static/picture/hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="卖萌社留言板 - 给我们留言">
+  <meta name="twitter:description" content="分享你的想法和建议，与卖萌社交流互动。">
+  <meta name="twitter:image" content="https://maimengshe.com/static/picture/hero.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
   <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +34,37 @@
   <link href="static/css/swiper-bundle.min.css" rel="stylesheet">
   <link href="static/css/font-awesome.min.css" rel="stylesheet">
   <link href="static/css/styles.css" rel="stylesheet">
+
+  <!-- 结构化数据：联系/留言页 + 面包屑 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://maimengshe.com/messenger.html#webpage",
+        "url": "https://maimengshe.com/messenger.html",
+        "name": "卖萌社留言板",
+        "inLanguage": "zh-CN",
+        "isPartOf": { "@id": "https://maimengshe.com/#website" },
+        "description": "卖萌社留言板：给卖萌社留言，分享想法和建议。",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "卖萌社",
+          "email": "mail@maimengshe.com",
+          "url": "https://maimengshe.com/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://maimengshe.com/" },
+          { "@type": "ListItem", "position": 2, "name": "留言板", "item": "https://maimengshe.com/messenger.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -26,7 +73,7 @@
   <header id="header" class="header">
     <div class="container">
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="static/image/logo.png" alt="卖萌社">
+        <img src="static/image/logo.png" alt="卖萌社 Logo">
       </a>
       <nav id="navbar" class="navbar">
         <ul>
@@ -51,7 +98,7 @@
             <p style="color: var(--color-text-muted); margin-top: 16px;">给我们留言，分享你的想法和建议</p>
           </div>
           <div class="pages-images">
-            <img src="static/picture/about.jpg" class="img-fluid" alt="" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+            <img src="static/picture/about.jpg" class="img-fluid" alt="卖萌社留言板" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
           </div>
         </div>
       </div>
@@ -181,7 +228,7 @@
             <div class="contact-widget">
               <p>mail@maimengshe.com</p>
               <p>微信公众号：卖萌社</p>
-              <p><img width="150" src="static/image/wx.png" alt="" style="border-radius: var(--radius-md);"></p>
+              <p><img width="150" src="static/image/wx.png" alt="卖萌社微信公众号二维码" style="border-radius: var(--radius-md);"></p>
             </div>
           </div>
         </div>

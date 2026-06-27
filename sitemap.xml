@@ -1,11 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<url><loc>https://maimengshe.com/</loc><lastmod>2026-06-26T00:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>1.00</priority></url>
-<url><loc>https://maimengshe.com/index.html</loc><lastmod>2026-06-26T00:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.80</priority></url>
-<url><loc>https://maimengshe.com/news.html</loc><lastmod>2026-06-26T00:00:00+00:00</lastmod><changefreq>daily</changefreq><priority>0.80</priority></url>
-<url><loc>https://maimengshe.com/goods.html</loc><lastmod>2026-06-26T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>
-<url><loc>https://maimengshe.com/about.html</loc><lastmod>2026-06-26T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-<url><loc>https://maimengshe.com/postergirl.html</loc><lastmod>2026-06-26T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-<url><loc>https://maimengshe.com/kbmusume.html</loc><lastmod>2026-06-26T00:00:00+00:00</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
-<url><loc>https://maimengshe.com/messenger.html</loc><lastmod>2026-06-26T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><priority>0.60</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- 首页（规范 URL，不再单独收录 index.html 以避免重复内容） -->
+  <url>
+    <loc>https://maimengshe.com/</loc>
+    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+    <image:image>
+      <image:loc>https://maimengshe.com/static/picture/hero.png</image:loc>
+      <image:title>卖萌社看板娘主视觉图</image:title>
+      <image:caption>卖萌社 - 我们只是一个普通的跑展组织</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://maimengshe.com/static/image/logo.png</image:loc>
+      <image:title>卖萌社 Logo</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://maimengshe.com/news.html</loc>
+    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://maimengshe.com/goods.html</loc>
+    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://maimengshe.com/static/product/stickers-3.jpg</image:loc>
+      <image:title>反光车贴 typeA</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://maimengshe.com/static/product/badge-6.jpg</image:loc>
+      <image:title>吧唧 typeA</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://maimengshe.com/static/product/acsta-1.jpg</image:loc>
+      <image:title>看板娘立牌</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://maimengshe.com/about.html</loc>
+    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <image:image>
+      <image:loc>https://maimengshe.com/static/picture/about.jpg</image:loc>
+      <image:title>卖萌社团队形象</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://maimengshe.com/postergirl.html</loc>
+    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <image:image>
+      <image:loc>https://maimengshe.com/static/picture/kbm.png</image:loc>
+      <image:title>卖萌社看板娘结城琴音</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://maimengshe.com/kbmusume.html</loc>
+    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+    <image:image>
+      <image:loc>https://maimengshe.com/static/picture/kbmusume.png</image:loc>
+      <image:title>卖萌社初代看板娘</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://maimengshe.com/messenger.html</loc>
+    <lastmod>2026-06-28T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
 </urlset>

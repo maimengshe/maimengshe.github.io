@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-CN">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="author" content="卖萌社">
-  <meta name="description" content="卖萌社 - 我们只是一个普通的跑展组织">
-  <meta name="keywords" content="动漫,ACG,卖萌社,掉节操,动漫社团,虚拟动漫社团">
+  <meta name="description" content="卖萌社是一个网络虚拟动漫社团，专注漫展跑展组队、场照记录与 ACG 资讯分享。主要活动在 QQ 群、微信群、小红书、抖音、新浪微博等社区，欢迎一个人没动力去看漫展的同好加入。">
+  <meta name="keywords" content="动漫,ACG,卖萌社,掉节操,动漫社团,虚拟动漫社团,漫展,跑展,漫展组队,看板娘">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <title>卖萌社 - 我们只是一个普通的跑展组织</title>
   <link rel="shortcut icon" href="favicon.ico">
+  <link rel="canonical" href="https://maimengshe.com/">
+
+  <!-- Open Graph / 社交分享 -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="卖萌社">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="卖萌社 - 我们只是一个普通的跑展组织">
+  <meta property="og:description" content="卖萌社是一个网络虚拟动漫社团，专注漫展跑展组队、场照记录与 ACG 资讯分享。欢迎一个人没动力去看漫展的同好加入。">
+  <meta property="og:url" content="https://maimengshe.com/">
+  <meta property="og:image" content="https://maimengshe.com/static/picture/hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="卖萌社 - 我们只是一个普通的跑展组织">
+  <meta name="twitter:description" content="卖萌社是一个网络虚拟动漫社团，专注漫展跑展组队、场照记录与 ACG 资讯分享。">
+  <meta name="twitter:image" content="https://maimengshe.com/static/picture/hero.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
   <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +34,53 @@
   <link href="static/css/swiper-bundle.min.css" rel="stylesheet">
   <link href="static/css/font-awesome.min.css" rel="stylesheet">
   <link href="static/css/styles.css" rel="stylesheet">
+
+  <!-- 结构化数据：组织 + 网站 + 面包屑（供 AI 搜索引擎理解实体） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://maimengshe.com/#organization",
+        "name": "卖萌社",
+        "alternateName": "Maimengshe",
+        "url": "https://maimengshe.com/",
+        "logo": "https://maimengshe.com/static/image/logo.png",
+        "image": "https://maimengshe.com/static/picture/hero.png",
+        "description": "卖萌社是一个网络虚拟动漫社团，专注漫展跑展组队、场照记录与 ACG 资讯分享，写作卖萌社读作掉节操。",
+        "foundingDate": "2013-01-01",
+        "email": "mail@maimengshe.com",
+        "sameAs": [
+          "https://weibo.com/u/3146514722",
+          "https://xhslink.com/m/66LyRs9VNyS",
+          "https://v.douyin.com/3E7BDcOeMOo/",
+          "https://maimengshe.podcast.xyz/",
+          "https://zh.moegirl.org.cn/%E5%8D%96%E8%90%8C%E7%A4%BE%E7%9C%8B%E6%9D%BF%E5%A8%98"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://maimengshe.com/#website",
+        "url": "https://maimengshe.com/",
+        "name": "卖萌社",
+        "inLanguage": "zh-CN",
+        "publisher": { "@id": "https://maimengshe.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://maimengshe.com/news.html?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://maimengshe.com/" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -26,7 +89,7 @@
   <header id="header" class="header">
     <div class="container">
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="static/image/logo.png" alt="卖萌社">
+        <img src="static/image/logo.png" alt="卖萌社 Logo">
       </a>
       <nav id="navbar" class="navbar">
         <ul>
@@ -54,7 +117,7 @@
         </div>
       </div>
       <div class="hero-image">
-        <img src="static/picture/hero.png" alt="卖萌社">
+        <img src="static/picture/hero.png" alt="卖萌社看板娘主视觉图">
       </div>
     </div>
   </section>
@@ -140,7 +203,7 @@
             <div class="contact-widget">
               <p>mail@maimengshe.com</p>
               <p>微信公众号：卖萌社</p>
-              <p><img width="150" src="static/image/wx.png" alt="" style="border-radius: var(--radius-md);"></p>
+              <p><img width="150" src="static/image/wx.png" alt="卖萌社微信公众号二维码" style="border-radius: var(--radius-md);"></p>
             </div>
           </div>
         </div>

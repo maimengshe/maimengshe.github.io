@@ -1,0 +1,36 @@
+# 卖萌社 robots.txt
+# https://maimengshe.com
+
+User-agent: *
+Allow: /
+
+# 显式允许主流 AI / 搜索爬虫抓取，用于 AI 搜索摘要与知识卡片
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: YisouSpider
+Allow: /
+
+# 禁止抓取后台/表单处理脚本
+Disallow: /static/js/contactform.js
+Disallow: /static/js/validator.min.js
+
+Sitemap: https://maimengshe.com/sitemap.xml

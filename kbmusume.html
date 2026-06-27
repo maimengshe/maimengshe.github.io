@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-CN">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="author" content="卖萌社">
-  <meta name="description" content="卖萌社 - 我们只是一个普通的跑展组织">
-  <meta name="keywords" content="动漫,ACG,卖萌社,掉节操,动漫社团,虚拟动漫社团">
-  <title>看板娘 | 卖萌社</title>
+  <meta name="description" content="卖萌社初代看板娘设定公开：金色单马尾红瞳少女，傲娇、弱气、毒舌、略腹黑的完美主义者，受刺激会黑化。身高 153cm，自称永远 16 岁，水手服白丝搭配。">
+  <meta name="keywords" content="卖萌社,看板娘,初代看板娘,kbmusume,虚拟角色,傲娇,黑化,ACG,动漫社团">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <title>初代看板娘 | 卖萌社</title>
   <link rel="shortcut icon" href="favicon.ico">
+  <link rel="canonical" href="https://maimengshe.com/kbmusume.html">
+
+  <!-- Open Graph / 社交分享 -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="卖萌社">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="卖萌社初代看板娘设定公开">
+  <meta property="og:description" content="金色单马尾红瞳少女，傲娇毒舌、略腹黑的完美主义者，受刺激会黑化。">
+  <meta property="og:url" content="https://maimengshe.com/kbmusume.html">
+  <meta property="og:image" content="https://maimengshe.com/static/picture/kbmusume.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="卖萌社初代看板娘设定公开">
+  <meta name="twitter:description" content="金色单马尾红瞳少女，傲娇毒舌、略腹黑的完美主义者。">
+  <meta name="twitter:image" content="https://maimengshe.com/static/picture/kbmusume.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
   <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +34,35 @@
   <link href="static/css/swiper-bundle.min.css" rel="stylesheet">
   <link href="static/css/font-awesome.min.css" rel="stylesheet">
   <link href="static/css/styles.css" rel="stylesheet">
+
+  <!-- 结构化数据：初代看板娘虚拟角色（Person）+ 面包屑 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://maimengshe.com/kbmusume.html#character",
+        "name": "卖萌社初代看板娘",
+        "description": "卖萌社初代看板娘，金色单马尾红瞳少女，傲娇、弱气、毒舌、略腹黑的完美主义者，受刺激会黑化。",
+        "image": "https://maimengshe.com/static/picture/kbmusume.png",
+        "gender": "Female",
+        "hairColor": "金色",
+        "birthDate": "2002-02-16",
+        "nationality": { "@type": "Country", "name": "中国" },
+        "jobTitle": "看板娘（初代）",
+        "worksFor": { "@id": "https://maimengshe.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://maimengshe.com/" },
+          { "@type": "ListItem", "position": 2, "name": "看板娘", "item": "https://maimengshe.com/kbmusume.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -26,7 +71,7 @@
   <header id="header" class="header">
     <div class="container">
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="static/image/logo.png" alt="卖萌社">
+        <img src="static/image/logo.png" alt="卖萌社 Logo">
       </a>
       <nav id="navbar" class="navbar">
         <ul>
@@ -51,7 +96,7 @@
             <p style="color: var(--color-text-muted); margin-top: 16px;">卖萌社看板娘设定公开！</p>
           </div>
           <div class="pages-images">
-            <img src="static/picture/about.jpg" class="img-fluid" alt="" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+            <img src="static/picture/about.jpg" class="img-fluid" alt="卖萌社看板娘" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
           </div>
         </div>
       </div>
@@ -73,13 +118,13 @@
             <div class="image-gallery">
               <div class="main-image">
                 <a href="static/picture/kbmusume.png" class="glightbox" data-gallery="kbm-main" data-title="看板娘 - 主图">
-                  <img id="currentImage" src="static/picture/kbmusume.png" alt="看板娘">
+                  <img id="currentImage" src="static/picture/kbmusume.png" alt="卖萌社初代看板娘主图">
                 </a>
                 <a href="static/picture/kbmusume-1.png" class="glightbox" data-gallery="kbm-main" data-title="看板娘 - 设定图" style="display: none;"></a>
               </div>
               <div class="thumbnail-list">
-                <img class="thumbnail active" src="static/picture/kbmusume.png" onclick="changeImage(this)" alt="看板娘">
-                <img class="thumbnail" src="static/picture/kbmusume-1.png" onclick="changeImage(this)" alt="看板娘">
+                <img class="thumbnail active" src="static/picture/kbmusume.png" onclick="changeImage(this)" alt="初代看板娘主图缩略图">
+                <img class="thumbnail" src="static/picture/kbmusume-1.png" onclick="changeImage(this)" alt="初代看板娘设定图缩略图">
               </div>
             </div>
           </div>
@@ -256,7 +301,7 @@
             <div class="contact-widget">
               <p>mail@maimengshe.com</p>
               <p>微信公众号：卖萌社</p>
-              <p><img width="150" src="static/image/wx.png" alt="" style="border-radius: var(--radius-md);"></p>
+              <p><img width="150" src="static/image/wx.png" alt="卖萌社微信公众号二维码" style="border-radius: var(--radius-md);"></p>
             </div>
           </div>
         </div>

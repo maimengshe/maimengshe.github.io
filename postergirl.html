@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-CN">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="author" content="卖萌社">
-  <meta name="description" content="卖萌社 - 我们只是一个普通的跑展组织">
-  <meta name="keywords" content="动漫,ACG,卖萌社,掉节操,动漫社团,虚拟动漫社团">
+  <meta name="description" content="卖萌社看板娘「结城 琴音 (Yuki Kotone)」设定公开：16 岁天津女孩，黑色长发深蓝瞳，水手服打扮，外冷内热的 INTJ 少女。包含生日、血型、MBTI、外貌与性格等完整设定。">
+  <meta name="keywords" content="卖萌社,看板娘,结城琴音,Yuki Kotone,虚拟角色,看板娘设定,ACG,动漫社团">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <title>看板娘 | 卖萌社</title>
   <link rel="shortcut icon" href="favicon.ico">
+  <link rel="canonical" href="https://maimengshe.com/postergirl.html">
+
+  <!-- Open Graph / 社交分享 -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="卖萌社">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="卖萌社看板娘 - 结城 琴音 (Yuki Kotone)">
+  <meta property="og:description" content="卖萌社看板娘设定公开：16 岁天津女孩，黑色长发深蓝瞳，水手服打扮，外冷内热的 INTJ 少女。">
+  <meta property="og:url" content="https://maimengshe.com/postergirl.html">
+  <meta property="og:image" content="https://maimengshe.com/static/picture/kbm.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="卖萌社看板娘 - 结城 琴音 (Yuki Kotone)">
+  <meta name="twitter:description" content="卖萌社看板娘设定公开：外冷内热的 INTJ 少女。">
+  <meta name="twitter:image" content="https://maimengshe.com/static/picture/kbm.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
   <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +34,36 @@
   <link href="static/css/swiper-bundle.min.css" rel="stylesheet">
   <link href="static/css/font-awesome.min.css" rel="stylesheet">
   <link href="static/css/styles.css" rel="stylesheet">
+
+  <!-- 结构化数据：看板娘虚拟角色（Person）+ 面包屑 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://maimengshe.com/postergirl.html#character",
+        "name": "结城 琴音",
+        "alternateName": "Yuki Kotone",
+        "description": "卖萌社看板娘，外冷内热的 INTJ 少女，黑色长发深蓝瞳，常穿水手服。",
+        "image": "https://maimengshe.com/static/picture/kbm.png",
+        "gender": "Female",
+        "birthDate": "2002-02-16",
+        "nationality": { "@type": "Country", "name": "中国" },
+        "knowsLanguage": ["zh-CN", "ja"],
+        "jobTitle": "看板娘",
+        "worksFor": { "@id": "https://maimengshe.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://maimengshe.com/" },
+          { "@type": "ListItem", "position": 2, "name": "看板娘", "item": "https://maimengshe.com/postergirl.html" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -26,7 +72,7 @@
   <header id="header" class="header">
     <div class="container">
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="static/image/logo.png" alt="卖萌社">
+        <img src="static/image/logo.png" alt="卖萌社 Logo">
       </a>
       <nav id="navbar" class="navbar">
         <ul>
@@ -51,7 +97,7 @@
             <p style="color: var(--color-text-muted); margin-top: 16px;">卖萌社看板娘设定公开！</p>
           </div>
           <div class="pages-images">
-            <img src="static/picture/about.jpg" class="img-fluid" alt="" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+            <img src="static/picture/about.jpg" class="img-fluid" alt="卖萌社看板娘" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
           </div>
         </div>
       </div>
@@ -73,13 +119,13 @@
             <div class="image-gallery">
               <div class="main-image">
                 <a href="static/picture/kbm.png" class="glightbox" data-gallery="kbm-main" data-title="看板娘 - 主图">
-                  <img id="currentImage" src="static/picture/kbm.png" alt="看板娘">
+                  <img id="currentImage" src="static/picture/kbm.png" alt="卖萌社看板娘结城琴音主图">
                 </a>
                 <a href="static/picture/kb1.png" class="glightbox" data-gallery="kbm-main" data-title="看板娘 - 设定图" style="display: none;"></a>
               </div>
               <div class="thumbnail-list">
-                <img class="thumbnail active" src="static/picture/kbm.png" onclick="changeImage(this)" alt="看板娘">
-                <img class="thumbnail" src="static/picture/kb1.png" onclick="changeImage(this)" alt="看板娘">
+                <img class="thumbnail active" src="static/picture/kbm.png" onclick="changeImage(this)" alt="看板娘结城琴音主图缩略图">
+                <img class="thumbnail" src="static/picture/kb1.png" onclick="changeImage(this)" alt="看板娘结城琴音设定图缩略图">
               </div>
             </div>
           </div>
@@ -281,7 +327,7 @@
             <div class="contact-widget">
               <p>mail@maimengshe.com</p>
               <p>微信公众号：卖萌社</p>
-              <p><img width="150" src="static/image/wx.png" alt="" style="border-radius: var(--radius-md);"></p>
+              <p><img width="150" src="static/image/wx.png" alt="卖萌社微信公众号二维码" style="border-radius: var(--radius-md);"></p>
             </div>
           </div>
         </div>

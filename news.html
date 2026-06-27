@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-CN">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="author" content="卖萌社">
-  <meta name="description" content="卖萌社资讯 - 最新公告和活动信息">
-  <meta name="keywords" content="动漫,ACG,卖萌社,资讯,公告,活动,漫展">
+  <meta name="description" content="卖萌社资讯公告：最新看板娘形象发布、线下聚会活动、漫展游场视频与社团里程碑公告，第一时间掌握卖萌社动态。">
+  <meta name="keywords" content="卖萌社,资讯,公告,活动,漫展,看板娘,跑展,游场视频,动漫社团">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <title>资讯 | 卖萌社</title>
   <link rel="shortcut icon" href="favicon.ico">
+  <link rel="canonical" href="https://maimengshe.com/news.html">
+
+  <!-- Open Graph / 社交分享 -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="卖萌社">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="卖萌社资讯 - 最新公告和活动信息">
+  <meta property="og:description" content="最新看板娘形象发布、线下聚会活动、漫展游场视频与社团里程碑公告。">
+  <meta property="og:url" content="https://maimengshe.com/news.html">
+  <meta property="og:image" content="https://maimengshe.com/static/picture/hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="卖萌社资讯 - 最新公告和活动信息">
+  <meta name="twitter:description" content="最新看板娘形象发布、线下聚会活动与漫展游场视频公告。">
+  <meta name="twitter:image" content="https://maimengshe.com/static/picture/hero.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
   <link href="static/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +34,125 @@
   <link href="static/css/swiper-bundle.min.css" rel="stylesheet">
   <link href="static/css/font-awesome.min.css" rel="stylesheet">
   <link href="static/css/styles.css" rel="stylesheet">
+
+  <!-- 结构化数据：资讯列表（ItemList + Article），供 AI 搜索引用 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": "https://maimengshe.com/news.html#blog",
+        "name": "卖萌社资讯公告",
+        "url": "https://maimengshe.com/news.html",
+        "inLanguage": "zh-CN",
+        "publisher": { "@id": "https://maimengshe.com/#organization" },
+        "description": "卖萌社最新公告、活动与漫展资讯。"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://maimengshe.com/" },
+          { "@type": "ListItem", "position": 2, "name": "资讯", "item": "https://maimengshe.com/news.html" }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "卖萌社资讯列表",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Article",
+              "headline": "我们更新了新的形象",
+              "datePublished": "2026-06-22",
+              "articleSection": "公告",
+              "url": "https://mp.weixin.qq.com/s/cC2RjU6TGINk9p9rk9fuaw"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Article",
+              "headline": "新的看板娘形象",
+              "datePublished": "2026-06-21",
+              "articleSection": "公告",
+              "url": "https://mp.weixin.qq.com/s/o4XaOTRs_wKZPJ8Pizkq5Q"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Article",
+              "headline": "看板娘形象发布",
+              "datePublished": "2024-09-09",
+              "articleSection": "公告",
+              "url": "https://mp.weixin.qq.com/s/5fo-wg6rnmF5gcIiKfSfPQ"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Article",
+              "headline": "我们更新了新的形象",
+              "datePublished": "2024-09-08",
+              "articleSection": "公告",
+              "url": "https://mp.weixin.qq.com/s/y-gXovFdm-PgqR73GFnOdA"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "Article",
+              "headline": "第2届天津魔力动漫周末游场视频",
+              "datePublished": "2013-08-29",
+              "articleSection": "视频",
+              "url": "https://maimengshe.com/news.html"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "Article",
+              "headline": "正式发布『卖萌社』名称",
+              "datePublished": "2013-01-01",
+              "articleSection": "公告",
+              "url": "https://maimengshe.com/news.html"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "item": {
+              "@type": "Article",
+              "headline": "卖萌社首次线下聚会",
+              "datePublished": "2012-04-29",
+              "articleSection": "活动",
+              "url": "https://maimengshe.com/news.html"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "item": {
+              "@type": "Article",
+              "headline": "天津二次元星人群组创建",
+              "datePublished": "2012-03-30",
+              "articleSection": "公告",
+              "url": "https://maimengshe.com/news.html"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -26,7 +161,7 @@
   <header id="header" class="header">
     <div class="container">
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="static/image/logo.png" alt="卖萌社">
+        <img src="static/image/logo.png" alt="卖萌社 Logo">
       </a>
       <nav id="navbar" class="navbar">
         <ul>
@@ -51,7 +186,7 @@
             <p style="color: var(--color-text-muted); margin-top: 16px;">最新公告和活动信息</p>
           </div>
           <div class="pages-images">
-            <img src="static/picture/about.jpg" class="img-fluid" alt="" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+            <img src="static/picture/about.jpg" class="img-fluid" alt="卖萌社资讯" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
           </div>
         </div>
       </div>
@@ -64,7 +199,7 @@
 
           <article class="news-list-item" data-aos="fade-up" style="display: flex; gap: 0; background: var(--color-bg-card); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s ease;">
             <div class="news-list-image" style="width: 280px; flex-shrink: 0; overflow: hidden;">
-              <img src="static/picture/about.jpg" alt="" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
+              <img src="static/picture/about.jpg" alt="卖萌社资讯配图" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
             </div>
             <div class="news-list-content" style="flex: 1; padding: 20px 24px; display: flex; flex-direction: column; justify-content: center;">
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;">
@@ -82,7 +217,7 @@
 
           <article class="news-list-item" data-aos="fade-up" data-aos-delay="100" style="display: flex; gap: 0; background: var(--color-bg-card); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s ease;">
             <div class="news-list-image" style="width: 280px; flex-shrink: 0; overflow: hidden;">
-              <img src="static/picture/about.jpg" alt="" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
+              <img src="static/picture/about.jpg" alt="卖萌社资讯配图" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
             </div>
             <div class="news-list-content" style="flex: 1; padding: 20px 24px; display: flex; flex-direction: column; justify-content: center;">
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;">
@@ -100,7 +235,7 @@
 
           <article class="news-list-item" data-aos="fade-up" data-aos-delay="100" style="display: flex; gap: 0; background: var(--color-bg-card); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s ease;">
             <div class="news-list-image" style="width: 280px; flex-shrink: 0; overflow: hidden;">
-              <img src="static/picture/about.jpg" alt="" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
+              <img src="static/picture/about.jpg" alt="卖萌社资讯配图" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
             </div>
             <div class="news-list-content" style="flex: 1; padding: 20px 24px; display: flex; flex-direction: column; justify-content: center;">
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;">
@@ -118,7 +253,7 @@
 
           <article class="news-list-item" data-aos="fade-up" data-aos-delay="200" style="display: flex; gap: 0; background: var(--color-bg-card); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s ease;">
             <div class="news-list-image" style="width: 280px; flex-shrink: 0; overflow: hidden;">
-              <img src="static/picture/about.jpg" alt="" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
+              <img src="static/picture/about.jpg" alt="卖萌社资讯配图" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
             </div>
             <div class="news-list-content" style="flex: 1; padding: 20px 24px; display: flex; flex-direction: column; justify-content: center;">
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;">
@@ -136,7 +271,7 @@
 
           <article class="news-list-item" data-aos="fade-up" data-aos-delay="300" style="display: flex; gap: 0; background: var(--color-bg-card); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s ease;">
             <div class="news-list-image" style="width: 280px; flex-shrink: 0; overflow: hidden;">
-              <img src="static/picture/about.jpg" alt="" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
+              <img src="static/picture/about.jpg" alt="卖萌社资讯配图" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
             </div>
             <div class="news-list-content" style="flex: 1; padding: 20px 24px; display: flex; flex-direction: column; justify-content: center;">
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;">
@@ -157,7 +292,7 @@
 
           <article class="news-list-item" data-aos="fade-up" data-aos-delay="100" style="display: flex; gap: 0; background: var(--color-bg-card); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s ease;">
             <div class="news-list-image" style="width: 280px; flex-shrink: 0; overflow: hidden;">
-              <img src="static/picture/about.jpg" alt="" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
+              <img src="static/picture/about.jpg" alt="卖萌社资讯配图" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
             </div>
             <div class="news-list-content" style="flex: 1; padding: 20px 24px; display: flex; flex-direction: column; justify-content: center;">
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;">
@@ -178,7 +313,7 @@
 
           <article class="news-list-item" data-aos="fade-up" data-aos-delay="200" style="display: flex; gap: 0; background: var(--color-bg-card); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s ease;">
             <div class="news-list-image" style="width: 280px; flex-shrink: 0; overflow: hidden;">
-              <img src="static/picture/about.jpg" alt="" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
+              <img src="static/picture/about.jpg" alt="卖萌社资讯配图" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
             </div>
             <div class="news-list-content" style="flex: 1; padding: 20px 24px; display: flex; flex-direction: column; justify-content: center;">
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;">
@@ -199,7 +334,7 @@
 
           <article class="news-list-item" data-aos="fade-up" data-aos-delay="300" style="display: flex; gap: 0; background: var(--color-bg-card); border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s ease;">
             <div class="news-list-image" style="width: 280px; flex-shrink: 0; overflow: hidden;">
-              <img src="static/picture/about.jpg" alt="" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
+              <img src="static/picture/about.jpg" alt="卖萌社资讯配图" style="width: 100%; height: 100%; min-height: 160px; object-fit: cover; transition: transform 0.4s ease;">
             </div>
             <div class="news-list-content" style="flex: 1; padding: 20px 24px; display: flex; flex-direction: column; justify-content: center;">
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap;">
@@ -263,7 +398,7 @@
             <div class="contact-widget">
               <p>mail@maimengshe.com</p>
               <p>微信公众号：卖萌社</p>
-              <p><img width="150" src="static/image/wx.png" alt="" style="border-radius: var(--radius-md);"></p>
+              <p><img width="150" src="static/image/wx.png" alt="卖萌社微信公众号二维码" style="border-radius: var(--radius-md);"></p>
             </div>
           </div>
         </div>
