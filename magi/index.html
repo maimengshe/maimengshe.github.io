@@ -406,11 +406,10 @@
       });
     }
     
-    window.addEventListener('DOMContentLoaded', () => {
-      terminals.forEach(t => updateTime(`time-${t.id}`));
-      judgeBtn.addEventListener('click', executeJudgment);
-      setTimeout(executeJudgment, 500);
-    });
+    // DOM 已就绪（script 在 body 末尾），直接初始化
+    terminals.forEach(t => updateTime(`time-${t.id}`));
+    judgeBtn.addEventListener('click', executeJudgment);
+    setTimeout(executeJudgment, 500);
   </script>
 </body>
 </html>
