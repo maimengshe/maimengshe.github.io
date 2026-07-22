@@ -52,6 +52,24 @@
   </script>
   
   <!-- 自定义工具类 -->
+  <style>
+    /* CSS变量使颜色全局可用 */
+    :root {
+      --magi-blue: #00f0ff;
+      --magi-red: #ff003c;
+      --magi-yellow: #f0ff00;
+      --magi-green: #00ff66;
+      --magi-dark: #0a111c;
+      --magi-darker: #050a12;
+    }
+    /* 基础样式—Tailwind加载失败的降级方案 */
+    body { background-color: var(--magi-darker); color: #d1d5db; }
+    .terminal-border {
+      box-shadow: 0 0 5px var(--magi-blue), inset 0 0 5px var(--magi-blue);
+    }
+  </style>
+  
+  <!-- 自定义工具类 (Tailwind Play CDN 处理) -->
   <style type="text/tailwindcss">
     @layer utilities {
       .text-shadow-glow {
@@ -69,10 +87,6 @@
           transparent 100%);
         background-size: 100% 4px;
         pointer-events: none;
-      }
-      .terminal-border {
-        box-shadow: 0 0 5px theme('colors.magi.blue'), 
-                    inset 0 0 5px theme('colors.magi.blue');
       }
     }
   </style>
@@ -100,8 +114,8 @@
     <!-- 终端区域 -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
       <!-- MELCHIOR 终端 -->
-      <div class="terminal relative group" id="terminal-1">
-        <div class="absolute inset-0 bg-magi-dark/80 terminal-border rounded-lg p-6 flex flex-col">
+      <div class="terminal min-h-[300px]" id="terminal-1">
+        <div class="h-full bg-magi-dark/80 terminal-border rounded-lg p-6 flex flex-col">
           <div class="flex justify-between items-center mb-6">
             <h2 class="text-magi-blue font-cyber text-xl font-bold">MELCHIOR</h2>
             <div class="flex space-x-2">
@@ -124,8 +138,8 @@
       </div>
       
       <!-- BALTHASAR 终端 -->
-      <div class="terminal relative group" id="terminal-2">
-        <div class="absolute inset-0 bg-magi-dark/80 terminal-border rounded-lg p-6 flex flex-col">
+      <div class="terminal min-h-[300px]" id="terminal-2">
+        <div class="h-full bg-magi-dark/80 terminal-border rounded-lg p-6 flex flex-col">
           <div class="flex justify-between items-center mb-6">
             <h2 class="text-magi-yellow font-cyber text-xl font-bold">BALTHASAR</h2>
             <div class="flex space-x-2">
@@ -148,8 +162,8 @@
       </div>
       
       <!-- CASPER 终端 -->
-      <div class="terminal relative group" id="terminal-3">
-        <div class="absolute inset-0 bg-magi-dark/80 terminal-border rounded-lg p-6 flex flex-col">
+      <div class="terminal min-h-[300px]" id="terminal-3">
+        <div class="h-full bg-magi-dark/80 terminal-border rounded-lg p-6 flex flex-col">
           <div class="flex justify-between items-center mb-6">
             <h2 class="text-magi-red font-cyber text-xl font-bold">CASPER</h2>
             <div class="flex space-x-2">
