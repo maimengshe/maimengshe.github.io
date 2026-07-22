@@ -4,56 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MAGI 判断系统</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
   
-  <!-- 配置Tailwind自定义主题 -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            magi: {
-              blue: '#00f0ff',
-              red: '#ff003c',
-              yellow: '#f0ff00',
-              green: '#00ff66',
-              dark: '#0a111c',
-              darker: '#050a12'
-            }
-          },
-          fontFamily: {
-            mono: ['Courier New', 'monospace'],
-            cyber: ['Orbitron', 'sans-serif']
-          },
-          animation: {
-            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'glow': 'glow 2s ease-in-out infinite alternate',
-            'scan': 'scan 2s linear infinite',
-            'text-scroll': 'text-scroll 1s ease-out forwards'
-          },
-          keyframes: {
-            glow: {
-              '0%': { textShadow: '0 0 5px currentColor, 0 0 10px currentColor' },
-              '100%': { textShadow: '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor' }
-            },
-            scan: {
-              '0%': { backgroundPosition: '0 -100vh' },
-              '100%': { backgroundPosition: '0 100vh' }
-            },
-            'text-scroll': {
-              '0%': { transform: 'translateY(20px)', opacity: '0' },
-              '100%': { transform: 'translateY(0)', opacity: '1' }
-            }
-          }
-        }
-      }
-    }
-  </script>
-  
-  <!-- 自定义工具类 -->
+  <!-- ===== 全部样式自包含，不依赖 Tailwind CDN ===== -->
   <style>
-    /* CSS变量使颜色全局可用 */
+    /* ---- CSS 变量 ---- */
     :root {
       --magi-blue: #00f0ff;
       --magi-red: #ff003c;
@@ -61,51 +15,215 @@
       --magi-green: #00ff66;
       --magi-dark: #0a111c;
       --magi-darker: #050a12;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
     }
-    /* 基础样式—Tailwind加载失败的降级方案 */
-    body { background-color: var(--magi-darker); color: #d1d5db; }
+
+    /* ---- Reset & Base ---- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--magi-darker);
+      color: var(--gray-300);
+      font-family: 'Courier New', monospace;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ---- Container ---- */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    /* ---- Grid ---- */
+    .grid { display: grid; }
+    .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+    .gap-8 { gap: 2rem; }
+
+    /* ---- Flex ---- */
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .flex-grow { flex-grow: 1; }
+    .items-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .space-x-2 > * + * { margin-left: 0.5rem; }
+    .gap-2 { gap: 0.5rem; }
+
+    /* ---- Spacing ---- */
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .mb-6  { margin-bottom: 1.5rem; }
+    .mb-12 { margin-bottom: 3rem; }
+    .mt-2  { margin-top: 0.5rem; }
+    .mt-4  { margin-top: 1rem; }
+    .mt-6  { margin-top: 1.5rem; }
+    .mt-8  { margin-top: 2rem; }
+    .mt-16 { margin-top: 4rem; }
+    .px-4  { padding-left: 1rem; padding-right: 1rem; }
+    .py-8  { padding-top: 2rem; padding-bottom: 2rem; }
+    .p-6   { padding: 1.5rem; }
+    .p-8   { padding: 2rem; }
+
+    /* ---- Sizing ---- */
+    .w-3 { width: 0.75rem; }
+    .h-3 { height: 0.75rem; }
+    .h-full { height: 100%; }
+    .min-h-screen  { min-height: 100vh; }
+    .min-h-\[300px\] { min-height: 300px; }
+
+    /* ---- Typography ---- */
+    .text-center { text-align: center; }
+    .text-xs  { font-size: 0.75rem;   }
+    .text-sm  { font-size: 0.875rem;  }
+    .text-base { font-size: 1rem; }
+    .text-xl  { font-size: 1.25rem;   }
+    .text-2xl { font-size: 1.5rem;    }
+    .text-5xl { font-size: 3rem;      }
+    .text-6xl { font-size: 3.75rem;   }
+    .text-7xl { font-size: 4.5rem;    }
+    .font-bold  { font-weight: 700; }
+    .font-mono  { font-family: 'Courier New', monospace; }
+    .font-cyber { font-family: 'Orbitron', sans-serif; }
+
+    /* ---- Max Width ---- */
+    .max-w-2xl { max-width: 42rem; }
+    .max-w-3xl { max-width: 48rem; }
+
+    /* ---- Colors: Text ---- */
+    .text-magi-blue   { color: var(--magi-blue); }
+    .text-magi-red    { color: var(--magi-red); }
+    .text-magi-yellow { color: var(--magi-yellow); }
+    .text-magi-green  { color: var(--magi-green); }
+    .text-gray-300 { color: var(--gray-300); }
+    .text-gray-400 { color: var(--gray-400); }
+    .text-gray-500 { color: var(--gray-500); }
+
+    /* ---- Colors: Background ---- */
+    .bg-magi-darker    { background: var(--magi-darker); }
+    .bg-magi-dark\/80  { background: rgba(10, 17, 28, 0.8); }
+    .bg-magi-dark\/90  { background: rgba(10, 17, 28, 0.9); }
+    .bg-magi-red       { background: var(--magi-red); }
+    .bg-magi-yellow    { background: var(--magi-yellow); }
+    .bg-magi-green     { background: var(--magi-green); }
+    .bg-magi-blue\/20  { background: rgba(0, 240, 255, 0.2); }
+
+    /* ---- Colors: Border ---- */
+    .border { border: 1px solid; }
+    .border-magi-blue\/50 { border-color: rgba(0, 240, 255, 0.5); }
+
+    /* ---- Radius ---- */
+    .rounded-lg    { border-radius: 0.5rem; }
+    .rounded-full  { border-radius: 9999px; }
+
+    /* ---- Overflow / Position / Z-index ---- */
+    .overflow-hidden   { overflow: hidden; }
+    .overflow-x-hidden { overflow-x: hidden; }
+    .fixed  { position: fixed; }
+    .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+    .relative { position: relative; }
+    .z-0  { z-index: 0; }
+    .z-10 { z-index: 10; }
+    .z-20 { z-index: 20; }
+
+    /* ---- Opacity ---- */
+    .opacity-0  { opacity: 0; }
+    .opacity-30 { opacity: 0.3; }
+
+    /* ===== 终端背景网格 ===== */
+    .terminal-grid {
+      background-image:
+        linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+      pointer-events: none;
+    }
+
+    /* ===== 扫描线 ===== */
+    .scanline {
+      background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(0, 240, 255, 0.08) 50%,
+        transparent 100%);
+      background-size: 100% 4px;
+      pointer-events: none;
+      animation: scan 2s linear infinite;
+    }
+
+    /* ===== 终端面板边框光效 ===== */
     .terminal-border {
       box-shadow: 0 0 5px var(--magi-blue), inset 0 0 5px var(--magi-blue);
     }
-  </style>
-  
-  <!-- 自定义工具类 (Tailwind Play CDN 处理) -->
-  <style type="text/tailwindcss">
-    @layer utilities {
-      .text-shadow-glow {
-        text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
-      }
-      .terminal-grid {
-        background-image: linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
-                          linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
-        background-size: 20px 20px;
-      }
-      .scanline {
-        background: linear-gradient(to bottom, 
-          transparent 0%, 
-          rgba(0, 240, 255, 0.1) 50%, 
-          transparent 100%);
-        background-size: 100% 4px;
-        pointer-events: none;
-      }
+
+    /* ===== 动画关键帧 ===== */
+    @keyframes glow {
+      0%   { text-shadow: 0 0 5px currentColor, 0 0 10px currentColor; }
+      100% { text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor; }
+    }
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0.5; }
+    }
+    @keyframes scan {
+      0%   { background-position: 0 -100vh; }
+      100% { background-position: 0 100vh; }
+    }
+    @keyframes text-scroll {
+      0%   { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0);    opacity: 1; }
+    }
+
+    /* ===== 动画应用 ===== */
+    .animate-glow        { animation: glow 2s ease-in-out infinite alternate; }
+    .animate-pulse-slow  { animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    .animate-text-scroll { animation: text-scroll 1s ease-out forwards; }
+
+    /* ===== 按钮 ===== */
+    button {
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      border: none;
+      transition: all 0.3s;
+    }
+    .hover\:scale-105:hover          { transform: scale(1.05); }
+    .active\:scale-95:active         { transform: scale(0.95); }
+    .hover\:bg-magi-blue\/30:hover   { background: rgba(0, 240, 255, 0.3); }
+
+    /* ===== 标题自适应大小 ===== */
+    .title-main { font-size: clamp(2rem, 5vw, 3.5rem); }
+
+    /* ===== 响应式：中等屏幕以上 ===== */
+    @media (min-width: 768px) {
+      .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+      .md\:text-7xl    { font-size: 4.5rem; }
+      .md\:text-base   { font-size: 1rem; }
     }
   </style>
-  
-  <!-- 引入字体 -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
 
-<body class="bg-magi-darker text-gray-300 min-h-screen font-mono overflow-x-hidden">
+  <!-- 字体（从 Google Fonts 加载） -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 图标 -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <!-- Tailwind CDN（可选，用于渐进增强；页面不依赖它） -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
   <!-- 背景网格 -->
-  <div class="fixed inset-0 terminal-grid opacity-30 z-0"></div>
+  <div class="fixed inset-0 terminal-grid opacity-30"></div>
   
   <!-- 扫描线效果 -->
-  <div class="fixed inset-0 scanline animate-scan z-10"></div>
+  <div class="fixed inset-0 scanline"></div>
   
   <div class="container mx-auto px-4 py-8 relative z-20">
     <!-- 页面标题 -->
     <header class="text-center mb-12">
-      <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-cyber font-bold text-magi-blue animate-glow">
+      <h1 class="title-main font-cyber font-bold text-magi-blue animate-glow">
         MAGI<span class="text-magi-red">判断系统</span>
       </h1>
       <p class="mt-4 text-gray-400 max-w-2xl mx-auto">基于三贤人系统的独立判断与综合决策</p>
@@ -114,7 +232,7 @@
     <!-- 终端区域 -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
       <!-- MELCHIOR 终端 -->
-      <div class="terminal min-h-[300px]" id="terminal-1">
+      <div class="min-h-[300px]">
         <div class="h-full bg-magi-dark/80 terminal-border rounded-lg p-6 flex flex-col">
           <div class="flex justify-between items-center mb-6">
             <h2 class="text-magi-blue font-cyber text-xl font-bold">MELCHIOR</h2>
@@ -126,7 +244,7 @@
           </div>
           
           <div class="flex-grow flex flex-col justify-center items-center">
-            <div class="result-display text-6xl font-bold mb-4 opacity-0" id="result-1">?</div>
+            <div class="text-6xl font-bold mb-4 opacity-0" id="result-1">?</div>
             <p class="text-sm text-gray-400 mt-2">科学判断</p>
           </div>
           
@@ -138,7 +256,7 @@
       </div>
       
       <!-- BALTHASAR 终端 -->
-      <div class="terminal min-h-[300px]" id="terminal-2">
+      <div class="min-h-[300px]">
         <div class="h-full bg-magi-dark/80 terminal-border rounded-lg p-6 flex flex-col">
           <div class="flex justify-between items-center mb-6">
             <h2 class="text-magi-yellow font-cyber text-xl font-bold">BALTHASAR</h2>
@@ -150,7 +268,7 @@
           </div>
           
           <div class="flex-grow flex flex-col justify-center items-center">
-            <div class="result-display text-6xl font-bold mb-4 opacity-0" id="result-2">?</div>
+            <div class="text-6xl font-bold mb-4 opacity-0" id="result-2">?</div>
             <p class="text-sm text-gray-400 mt-2">伦理判断</p>
           </div>
           
@@ -162,7 +280,7 @@
       </div>
       
       <!-- CASPER 终端 -->
-      <div class="terminal min-h-[300px]" id="terminal-3">
+      <div class="min-h-[300px]">
         <div class="h-full bg-magi-dark/80 terminal-border rounded-lg p-6 flex flex-col">
           <div class="flex justify-between items-center mb-6">
             <h2 class="text-magi-red font-cyber text-xl font-bold">CASPER</h2>
@@ -174,7 +292,7 @@
           </div>
           
           <div class="flex-grow flex flex-col justify-center items-center">
-            <div class="result-display text-6xl font-bold mb-4 opacity-0" id="result-3">?</div>
+            <div class="text-6xl font-bold mb-4 opacity-0" id="result-3">?</div>
             <p class="text-sm text-gray-400 mt-2">情感判断</p>
           </div>
           
@@ -191,7 +309,7 @@
       <div class="bg-magi-dark/90 terminal-border rounded-lg p-8 relative overflow-hidden">
         <h2 class="text-center text-2xl font-cyber text-magi-blue mb-6">综合判断结果</h2>
         
-        <div class="final-result text-center py-8">
+        <div class="text-center py-8">
           <div class="text-5xl md:text-7xl font-bold mb-6 opacity-0" id="final-result">
             <span class="text-magi-green animate-pulse-slow">等待判断...</span>
           </div>
@@ -201,8 +319,8 @@
         </div>
         
         <div class="flex justify-center mt-8">
-          <button id="judge-btn" class="bg-magi-blue/20 hover:bg-magi-blue/30 text-magi-blue border border-magi-blue/50 rounded px-8 py-3 font-cyber transition-all duration-300 hover:scale-105 active:scale-95 flex items-center">
-            <i class="fa fa-refresh mr-2"></i> 执行判断
+          <button id="judge-btn" class="bg-magi-blue/20 hover:bg-magi-blue/30 text-magi-blue border border-magi-blue/50 rounded-lg px-8 py-3 font-cyber hover:scale-105 active:scale-95 flex items-center gap-2">
+            <i class="fa fa-refresh"></i> 执行判断
           </button>
         </div>
       </div>
@@ -218,111 +336,79 @@
   <script>
     // 终端数据
     const terminals = [
-      { id: 1, color: 'text-magi-blue', name: 'MELCHIOR', weight: 0.4 },  // 科学判断权重40%
-      { id: 2, color: 'text-magi-yellow', name: 'BALTHASAR', weight: 0.3 },  // 伦理判断权重30%
-      { id: 3, color: 'text-magi-red', name: 'CASPER', weight: 0.3 }  // 情感判断权重30%
+      { id: 1, color: 'text-magi-blue', name: 'MELCHIOR', weight: 0.4 },
+      { id: 2, color: 'text-magi-yellow', name: 'BALTHASAR', weight: 0.3 },
+      { id: 3, color: 'text-magi-red', name: 'CASPER', weight: 0.3 }
     ];
     
-    // DOM元素
     const judgeBtn = document.getElementById('judge-btn');
     const finalResult = document.getElementById('final-result');
     const resultExplanation = document.getElementById('result-explanation');
     
-    // 初始化时间显示
     function updateTime(elementId) {
       const now = new Date();
-      const timeString = now.toTimeString().slice(0, 8);
-      document.getElementById(elementId).textContent = timeString;
+      document.getElementById(elementId).textContent = now.toTimeString().slice(0, 8);
     }
     
-    // 随机生成判断结果
     function generateJudgment() {
       return Math.random() > 0.5 ? '是' : '否';
     }
     
-    // 计算最终结果
     function calculateFinalResult(results) {
-      let yesScore = 0;
-      let noScore = 0;
-      
+      let yesScore = 0, noScore = 0;
       results.forEach((result, index) => {
-        const weight = terminals[index].weight;
-        if (result === '是') {
-          yesScore += weight;
-        } else {
-          noScore += weight;
-        }
+        const w = terminals[index].weight;
+        result === '是' ? (yesScore += w) : (noScore += w);
       });
-      
       return yesScore > noScore ? '是' : '否';
     }
     
-    // 执行判断流程
     function executeJudgment() {
-      // 禁用按钮防止重复点击
       judgeBtn.disabled = true;
-      judgeBtn.innerHTML = '<i class="fa fa-spinner fa-spin mr-2"></i> 判断中...';
+      judgeBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> 判断中...';
       
-      // 重置最终结果
       finalResult.innerHTML = '<span class="text-magi-blue animate-pulse-slow">处理中...</span>';
       finalResult.classList.add('opacity-0');
       resultExplanation.textContent = '正在进行多维度分析...';
       
       const results = [];
       
-      // 逐个显示终端结果
       terminals.forEach((terminal, index) => {
         setTimeout(() => {
           const result = generateJudgment();
           results.push(result);
           
-          const resultElement = document.getElementById(`result-${terminal.id}`);
-          const timeElement = `time-${terminal.id}`;
+          const el = document.getElementById(`result-${terminal.id}`);
+          updateTime(`time-${terminal.id}`);
           
-          // 更新时间
-          updateTime(timeElement);
+          el.textContent = result;
+          el.className = `text-6xl font-bold mb-4 ${terminal.color} animate-text-scroll`;
           
-          // 显示结果动画
-          resultElement.textContent = result;
-          resultElement.className = `result-display text-6xl font-bold mb-4 ${terminal.color} animate-text-scroll`;
-          
-          // 如果是最后一个终端，计算最终结果
           if (index === terminals.length - 1) {
             setTimeout(() => {
               const final = calculateFinalResult(results);
               const finalColor = final === '是' ? 'text-magi-green' : 'text-magi-red';
               
-              // 显示最终结果
               finalResult.innerHTML = `<span class="${finalColor} animate-glow">${final}</span>`;
               finalResult.classList.remove('opacity-0');
               finalResult.classList.add('animate-text-scroll');
               
-              // 显示结果解释
               resultExplanation.innerHTML = `
                 <p>MELCHIOR: ${results[0]} (40%) | BALTHASAR: ${results[1]} (30%) | CASPER: ${results[2]} (30%)</p>
                 <p class="mt-2">基于权重计算得出综合判断</p>
               `;
               
-              // 恢复按钮
               judgeBtn.disabled = false;
-              judgeBtn.innerHTML = '<i class="fa fa-refresh mr-2"></i> 重新判断';
+              judgeBtn.innerHTML = '<i class="fa fa-refresh"></i> 重新判断';
             }, 1000);
           }
         }, (index + 1) * 1000);
       });
     }
     
-    // 初始化页面
     window.addEventListener('DOMContentLoaded', () => {
-      // 设置初始时间
-      terminals.forEach(terminal => {
-        updateTime(`time-${terminal.id}`);
-      });
-      
-      // 绑定按钮事件
+      terminals.forEach(t => updateTime(`time-${t.id}`));
       judgeBtn.addEventListener('click', executeJudgment);
-      
-      // 自动执行一次判断
       setTimeout(executeJudgment, 500);
     });
   </script>
