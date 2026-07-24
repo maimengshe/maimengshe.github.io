@@ -701,16 +701,189 @@
   .boot-details .ok { color: var(--green); }
   .boot-details .warn { color: var(--amber); }
 
-  /* ── 响应式 ── */
-  @media (max-width: 900px) {
-    .magi-row { grid-template-columns: 1fr; }
-    .bottom-panel { grid-template-columns: 1fr; }
-    .final-verdict { grid-column: 1; }
-    .judge-log { grid-column: 1; }
-    .header-title { font-size: 18px; letter-spacing: 3px; }
-    .controls { flex-direction: column; }
-    .question-input { width: 100%; }
+  /* ── 响应式 v2 - 深度适配手机 ── */
+
+  /* 小平板竖屏 & 大手机横屏 */
+  @media (max-width: 1024px) {
+    .container { padding: 16px 20px; }
+    .header-title { font-size: 22px; letter-spacing: 4px; }
+    .magi-row { gap: 14px; }
+    .magi-card { padding: 18px; }
+    .final-verdict { padding: 18px; }
+    .judge-log { padding: 18px; max-height: 220px; }
+    .boot-title { font-size: 36px; }
+  }
+
+  /* 手机竖屏 & 小屏 */
+  @media (max-width: 768px) {
+    .container { padding: 12px 14px; }
+
+    /* ── 头部 ── */
+    .header {
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 14px 0;
+      margin-bottom: 18px;
+    }
+    .header-left { gap: 12px; }
+    .nerv-logo {
+      font-size: 11px;
+      letter-spacing: 2px;
+      padding: 4px 8px;
+    }
+    .nerv-logo small { font-size: 7px; }
+    .header-title {
+      font-size: 18px;
+      letter-spacing: 3px;
+    }
+    .header-status {
+      width: 100%;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 4px;
+      border-top: 1px solid var(--border);
+    }
+    .header-status .online { font-size: 9px; }
+    #clockDisplay { font-size: 10px !important; }
+
+    /* ── 时间线 ── */
+    .timeline-bar {
+      gap: 8px;
+      padding: 8px 12px;
+      font-size: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .timeline-bar .time {
+      width: 100%;
+      font-size: 10px;
+    }
+    .timeline-bar .line { display: none; }
+
+    /* ── 控制栏 ── */
+    .controls {
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 18px !important;
+    }
+    .question-input {
+      width: 100%;
+      min-width: unset;
+      font-size: 13px;
+      padding: 12px 14px;
+      -webkit-appearance: none;
+    }
+    .btn {
+      width: 100%;
+      text-align: center;
+      padding: 14px 20px;
+      font-size: 12px;
+      border-width: 1px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ── 三 MAGI 卡片 ── */
+    .magi-row {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .magi-card {
+      padding: 16px;
+    }
+    .magi-name { font-size: 14px; letter-spacing: 2px; }
+    .magi-sub { font-size: 10px; }
+    .magi-status { font-size: 9px; }
+    .magi-question { font-size: 11px; }
+
+    .prob-row { gap: 6px; font-size: 10px; }
+    .prob-label { width: 28px; font-size: 10px; }
+    .prob-value { width: 36px; font-size: 11px; }
+
+    .magi-verdict { font-size: 12px; padding: 8px 10px; }
+
+    /* ── 底部面板 ── */
+    .bottom-panel {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .final-verdict { grid-column: 1; padding: 16px; }
+    .final-verdict .section-title { font-size: 10px; letter-spacing: 2px; margin-bottom: 12px; }
+    .final-result { font-size: 22px; padding: 14px; letter-spacing: 2px; }
+    .final-result-sub { font-size: 11px; }
+    .vote-count { gap: 16px; }
+    .vote-count .v-num { font-size: 18px; }
+    .vote-count .v-label { font-size: 8px; }
+
+    .judge-log { grid-column: 1; padding: 16px; max-height: 200px; }
+    .judge-log .section-title { font-size: 10px; letter-spacing: 2px; }
+    .log-container { max-height: 150px; }
+    .log-entry { font-size: 10px; }
+    .log-entry .tag { font-size: 8px; padding: 1px 4px; }
+    .log-entry .ts { margin-right: 4px; }
+
+    /* ── 底部 ── */
+    .footer {
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      font-size: 9px;
+      padding: 12px 0;
+    }
+
+    /* ── 开机动画 ── */
     .boot-title { font-size: 28px; letter-spacing: 4px; }
+    .boot-sub { font-size: 10px; letter-spacing: 4px; margin-bottom: 28px; }
+    .boot-loader { width: 200px; }
+    .boot-text { font-size: 10px; }
+    .boot-details { font-size: 9px; line-height: 1.6; }
+
+    /* ── 减少背景特效省性能 ── */
+    .hex-grid { opacity: .03; }
+    .particles { display: none; }
+    body::before { background-size: 30px 30px; }
+    .magi-card .corner { width: 8px; height: 8px; }
+  }
+
+  /* 超小屏手机 (< 400px) */
+  @media (max-width: 400px) {
+    .container { padding: 8px 10px; }
+    .header-title { font-size: 15px; letter-spacing: 2px; }
+    .nerv-logo { font-size: 10px; padding: 3px 6px; }
+    .magi-card { padding: 12px; }
+    .final-result { font-size: 18px; padding: 10px; }
+    .btn { padding: 12px 16px; font-size: 11px; }
+    .boot-title { font-size: 22px; }
+    .boot-loader { width: 160px; }
+    .prob-row { gap: 4px; }
+    .prob-label { width: 22px; font-size: 9px; }
+    .prob-value { width: 30px; font-size: 10px; }
+    .prob-bar-wrap { height: 10px; }
+  }
+
+  /* 触摸设备：去掉 hover 效果防止粘滞 */
+  @media (hover: none) and (pointer: coarse) {
+    .btn:hover::after { opacity: 0; }
+    .btn-primary:hover { box-shadow: none; background: transparent; }
+    .btn-danger:hover { box-shadow: none; background: transparent; }
+    .btn-green:hover { box-shadow: none; background: transparent; }
+    .btn:active { opacity: .7; }
+    .question-input:focus { box-shadow: none; }
+  }
+
+  /* 安全区域适配 (刘海屏) */
+  @supports (padding: env(safe-area-inset-bottom)) {
+    .container {
+      padding-left: max(14px, env(safe-area-inset-left));
+      padding-right: max(14px, env(safe-area-inset-right));
+      padding-bottom: max(12px, env(safe-area-inset-bottom));
+    }
+    .boot-overlay {
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
   }
 
   /* ── 粒子效果 ── */
