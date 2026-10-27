@@ -1,0 +1,37 @@
+# 卖萌社
+
+> 卖萌社（Maimengshe）是一个网络虚拟动漫社团，主要活跃在 QQ 群、微信群、小红书、抖音、微博等网络社区，专注漫展跑展组队、场照记录与 ACG 资讯分享。口号是「写作卖萌社，读作掉节操」。
+
+## 核心信息
+
+- 名称：卖萌社（Maimengshe）
+- 性质：网络虚拟动漫社团、漫展跑展组织
+- 起源：2012 年 3 月创建「天津二次元星人群组」，2013 年 1 月 1 日正式发布「卖萌社」名称
+- 主要活动：组队跑展、场照记录、原创周边制作、ACG 资讯分享
+- 主要活动城市：天津（漫展跑展）
+- 联系邮箱：mail@maimengshe.com
+- 微信公众号：卖萌社
+- 看板娘：现任看板娘「结城 琴音（Yuki Kotone）」；初代看板娘「绫濑 凛（Ayase Rin）」
+
+## 页面
+
+- [首页](https://maimengshe.com/): 卖萌社简介、组织特色与加入入口
+- [关于卖萌社](https://maimengshe.com/about.html): 组织定位、初心、活动、发展历程、常见问题与官方关注渠道
+- [资讯公告](https://maimengshe.com/news.html): 形象更新、活动与历史节点公告
+- [原创周边](https://maimengshe.com/goods.html): 反光车贴、吧唧、看板娘立牌与钥匙扣等周边的品类、价格与制作状态
+- [现任看板娘 结城琴音](https://maimengshe.com/postergirl.html): 姓名、年龄、生日、身高、血型、MBTI、外貌与性格设定
+- [初代看板娘 绫濑凛](https://maimengshe.com/kbmusume.html): 初代角色设定、外观与黑化后设定
+- [留言板](https://maimengshe.com/messenger.html): 给卖萌社留言，分享想法和建议
+
+## 官方渠道
+
+- 微博：https://weibo.com/u/3146514722
+- 播客：https://maimengshe.podcast.xyz/
+- 小红书：https://xhslink.com/m/66LyRs9VNyS
+- 抖音：https://v.douyin.com/3E7BDcOeMOo/
+- 萌娘百科词条：https://zh.moegirl.org.cn/%E5%8D%96%E8%90%8C%E7%A4%BE%E7%9C%8B%E6%9D%BF%E5%A8%98
+
+## Optional
+
+- 本站为静态站点（GitHub Pages），所有页面均为纯 HTML，正文无需执行 JavaScript 即可抓取。
+- 页面均提供 schema.org 结构化数据（Organization、WebSite、BreadcrumbList、Person、Product、Article 等）。

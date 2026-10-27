@@ -48,8 +48,8 @@
         "url": "https://maimengshe.com/",
         "logo": "https://maimengshe.com/static/image/logo.png",
         "image": "https://maimengshe.com/static/picture/hero.png",
-        "description": "卖萌社是一个网络虚拟动漫社团，专注漫展跑展组队、场照记录与 ACG 资讯分享，写作卖萌社读作掉节操。",
-        "foundingDate": "2013-01-01",
+        "description": "卖萌社是一个网络虚拟动漫社团，2012 年 3 月创建「天津二次元星人群组」，2013 年 1 月正式定名「卖萌社」，专注漫展跑展组队、场照记录与 ACG 资讯分享。",
+        "foundingDate": "2012-03-30",
         "email": "mail@maimengshe.com",
         "sameAs": [
           "https://weibo.com/u/3146514722",
@@ -65,12 +65,7 @@
         "url": "https://maimengshe.com/",
         "name": "卖萌社",
         "inLanguage": "zh-CN",
-        "publisher": { "@id": "https://maimengshe.com/#organization" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://maimengshe.com/news.html?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "publisher": { "@id": "https://maimengshe.com/#organization" }
       },
       {
         "@type": "BreadcrumbList",
@@ -108,7 +103,7 @@
   <section id="hero" class="hero">
     <div class="container">
       <div class="hero-content">
-        <h2>卖萌社</h2>
+        <h1>卖萌社</h1>
         <p class="heading-secondary">我们只是一个普通的跑展组织</p>
         <p>卖萌社是一个网络虚拟社团，主要活动在QQ群、微信群、小红书、抖音、新浪微博等网络社区。<br />专注跑展团队，如果你一个人没有动力、不好意思、没伴一起去看漫展的话，就来找我们吧！</p>
         <div class="btn-group">
@@ -135,21 +130,21 @@
           <div style="width: 64px; height: 64px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
             <i class="bi bi-people" style="font-size: 28px; color: #fff;"></i>
           </div>
-          <h4 style="font-size: 20px; margin-bottom: 12px; color: #fff;">团队跑展</h4>
+          <h3 style="font-size: 20px; margin-bottom: 12px; color: #fff;">团队跑展</h3>
           <p style="color: var(--color-text-muted); font-size: 15px;">一个人太孤单？我们一起组队跑展，互相照应，乐趣加倍！</p>
         </div>
         <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200" style="background: var(--color-bg-card); border-radius: var(--radius-lg); padding: 40px; text-align: center;">
           <div style="width: 64px; height: 64px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
             <i class="bi bi-camera" style="font-size: 28px; color: #fff;"></i>
           </div>
-          <h4 style="font-size: 20px; margin-bottom: 12px; color: #fff;">场照记录</h4>
+          <h3 style="font-size: 20px; margin-bottom: 12px; color: #fff;">场照记录</h3>
           <p style="color: var(--color-text-muted); font-size: 15px;">专业摄影团队，为你记录每一次精彩的漫展瞬间</p>
         </div>
         <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300" style="background: var(--color-bg-card); border-radius: var(--radius-lg); padding: 40px; text-align: center;">
           <div style="width: 64px; height: 64px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
             <i class="bi bi-megaphone" style="font-size: 28px; color: #fff;"></i>
           </div>
-          <h4 style="font-size: 20px; margin-bottom: 12px; color: #fff;">资讯分享</h4>
+          <h3 style="font-size: 20px; margin-bottom: 12px; color: #fff;">资讯分享</h3>
           <p style="color: var(--color-text-muted); font-size: 15px;">最新漫展资讯、周边情报、活动通知，第一时间掌握</p>
         </div>
       </div>
@@ -189,7 +184,7 @@
             </div>
           </div>
           <div>
-            <h4 class="footer-title">团队</h4>
+            <h3 class="footer-title">团队</h3>
             <ul class="footer-list">
               <li><a href="https://maimengshe.podcast.xyz/" target="_blank">播客</a></li>
               <li><a href="https://weibo.com/u/3146514722" target="_blank" rel="noopener noreferrer">微博</a></li>
@@ -201,7 +196,7 @@
             </ul>
           </div>
           <div>
-            <h4 class="footer-title">联系我们</h4>
+            <h3 class="footer-title">联系我们</h3>
             <div class="contact-widget">
               <p>mail@maimengshe.com</p>
               <p>微信公众号：卖萌社</p>
@@ -243,6 +238,7 @@
         grid-template-columns: 1fr !important;
         text-align: center;
       }
+      .hero h1,
       .hero h2 {
         font-size: 48px;
       }
@@ -264,6 +260,7 @@
       }
     }
     @media (max-width: 575px) {
+      .hero h1,
       .hero h2 {
         font-size: 36px;
       }

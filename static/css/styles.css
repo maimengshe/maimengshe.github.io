@@ -332,10 +332,12 @@ img {
   z-index: 1;
 }
 
+.hero h1,
 .hero h2 {
   font-size: 72px;
   font-weight: 800;
   line-height: 1.1;
+  margin-top: 0.83em;
   margin-bottom: 24px;
   background: linear-gradient(135deg, #fff 0%, #fff 50%, var(--color-primary) 100%);
   -webkit-background-clip: text;
@@ -442,6 +444,7 @@ img {
     text-align: center;
   }
 
+  .hero h1,
   .hero h2 {
     font-size: 48px;
   }
@@ -469,6 +472,7 @@ img {
 }
 
 @media (max-width: 575px) {
+  .hero h1,
   .hero h2 {
     font-size: 36px;
   }
@@ -506,8 +510,10 @@ img {
   gap: 40px;
 }
 
+.breadcrumbs h1,
 .breadcrumbs h2 {
   font-size: 48px;
+  margin-top: 0.83em;
   font-weight: 700;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
@@ -951,16 +957,20 @@ img {
   padding: 24px;
 }
 
+.portfolio-info h3,
 .portfolio-info h4 {
   font-size: 18px;
   font-weight: 600;
+  margin-top: 1.33em;
   margin-bottom: 16px;
 }
 
+.portfolio-info h3 a,
 .portfolio-info h4 a {
   color: var(--color-text);
 }
 
+.portfolio-info h3 a:hover,
 .portfolio-info h4 a:hover {
   color: var(--color-primary);
 }
