@@ -117,14 +117,15 @@
           <div data-aos="fade-right">
             <div class="image-gallery">
               <div class="main-image">
-                <a href="static/picture/kbmusume.png" class="glightbox" data-gallery="kbm-main" data-title="看板娘 - 主图">
-                  <img id="currentImage" src="static/picture/kbmusume.png" alt="卖萌社初代看板娘主图">
+                <a href="static/picture/kbmusume-sd.png" id="mainImageLink" class="main-image-link" data-title="看板娘 - 设定图">
+                  <img id="currentImage" src="static/picture/kbmusume-sd.png" alt="卖萌社初代看板娘设定图">
                 </a>
-                <a href="static/picture/kbmusume-1.png" class="glightbox" data-gallery="kbm-main" data-title="看板娘 - 设定图" style="display: none;"></a>
               </div>
               <div class="thumbnail-list">
-                <img class="thumbnail active" src="static/picture/kbmusume.png" onclick="changeImage(this)" alt="初代看板娘主图缩略图">
-                <img class="thumbnail" src="static/picture/kbmusume-1.png" onclick="changeImage(this)" alt="初代看板娘设定图缩略图">
+                <img class="thumbnail active" src="static/picture/kbmusume-sd.png" data-title="看板娘 - 设定图" onclick="changeImage(this)" alt="初代看板娘设定图缩略图">
+                <img class="thumbnail" src="static/picture/kbmusume-2.png" data-title="看板娘 - 立绘" onclick="changeImage(this)" alt="初代看板娘立绘缩略图">
+                <img class="thumbnail" src="static/picture/kbmusume.png" data-title="看板娘 - 立绘1" onclick="changeImage(this)" alt="初代看板娘立绘1缩略图">
+                <img class="thumbnail" src="static/picture/kbmusume-1.png" data-title="看板娘 - 立绘2" onclick="changeImage(this)" alt="初代看板娘立绘2缩略图">
               </div>
             </div>
           </div>
@@ -336,69 +337,112 @@
     var imageInterval;
     var lightbox;
 
-    // 图片信息数组
-    var galleryImages = [
-      { src: 'static/picture/kbmusume.png', title: '看板娘 - 主图' },
-      { src: 'static/picture/kbmusume-1.png', title: '看板娘 - 设定图' }
-    ];
+    // 缩略图列表就是放大图集的唯一数据源：
+    // 以后再加图只需再加一张缩略图（带 data-title），放大里会自动出现。
+    function getThumbnails() {
+      return Array.prototype.slice.call(document.querySelectorAll('.thumbnail'));
+    }
 
-    function changeImage(thumbnail) {
+    function getGallerySlides() {
+      return getThumbnails().map(function(thumbnail) {
+        return {
+          href: thumbnail.getAttribute('src'),
+          type: 'image',
+          title: thumbnail.getAttribute('data-title') || '',
+          alt: thumbnail.getAttribute('alt') || ''
+        };
+      });
+    }
+
+    function setActiveThumbnail(index) {
+      getThumbnails().forEach(function(thumbnail, i) {
+        if (i === index) {
+          thumbnail.classList.add('active');
+        } else {
+          thumbnail.classList.remove('active');
+        }
+      });
+    }
+
+    function showImage(index) {
+      var thumbnails = getThumbnails();
+      if (thumbnails.length === 0) {
+        return;
+      }
+      // 允许传入超出范围的索引，统一取模
+      index = ((index % thumbnails.length) + thumbnails.length) % thumbnails.length;
+      currentImageIndex = index;
+
+      var targetThumbnail = thumbnails[index];
       var mainImage = document.getElementById('currentImage');
-      var mainImageLink = document.querySelector('.main-image .glightbox');
+      var mainImageLink = document.getElementById('mainImageLink');
+
       mainImage.style.opacity = '0';
       setTimeout(function() {
-        mainImage.src = thumbnail.src;
+        mainImage.src = targetThumbnail.getAttribute('src');
+        mainImage.alt = targetThumbnail.getAttribute('alt') || mainImage.alt;
         if (mainImageLink) {
-          mainImageLink.href = thumbnail.src;
-        }
-        document.querySelectorAll('.thumbnail').forEach(function(thumb) {
-          thumb.classList.remove('active');
-        });
-        thumbnail.classList.add('active');
-        var thumbnails = document.querySelectorAll('.thumbnail');
-        for (var i = 0; i < thumbnails.length; i++) {
-          if (thumbnails[i] === thumbnail) {
-            currentImageIndex = i;
-            break;
-          }
+          mainImageLink.href = targetThumbnail.getAttribute('src');
+          mainImageLink.setAttribute('data-title', targetThumbnail.getAttribute('data-title') || '');
         }
         mainImage.style.opacity = '1';
       }, 300);
+
+      setActiveThumbnail(index);
+    }
+
+    function changeImage(thumbnail) {
+      showImage(getThumbnails().indexOf(thumbnail));
     }
 
     function autoSwitchImage() {
-      var thumbnails = document.querySelectorAll('.thumbnail');
-      if (thumbnails.length > 0) {
-        var mainImage = document.getElementById('currentImage');
-        var mainImageLink = document.querySelector('.main-image .glightbox');
-        mainImage.style.opacity = '0';
-        setTimeout(function() {
-          currentImageIndex = (currentImageIndex + 1) % thumbnails.length;
-          var nextThumbnail = thumbnails[currentImageIndex];
-          mainImage.src = nextThumbnail.src;
-          if (mainImageLink) {
-            mainImageLink.href = nextThumbnail.src;
-          }
-          document.querySelectorAll('.thumbnail').forEach(function(thumb) {
-            thumb.classList.remove('active');
-          });
-          nextThumbnail.classList.add('active');
-          mainImage.style.opacity = '1';
-        }, 300);
-      }
+      showImage(currentImageIndex + 1);
     }
 
     imageInterval = setInterval(autoSwitchImage, 5000);
   </script>
   <script src="static/js/main.js"></script>
   <script>
-    // 直接配置图片数组，确保正确的循环功能
+    // 不再依赖页面上的 .glightbox 链接：图集内容直接由缩略图列表生成，
+    // 点击主图时用 openAt 打开「当前显示」的那一张，而不是永远从第一张开始。
     lightbox = GLightbox({
       touchNavigation: true,
       loop: true,
-      autoplayVideos: true,
-      selector: '.glightbox'
+      autoplayVideos: true
     });
+    // 页面上已没有 .glightbox 链接，图集内容由缩略图列表动态生成
+    lightbox.setElements(getGallerySlides());
+
+    var mainImageLinkEl = document.getElementById('mainImageLink');
+    if (mainImageLinkEl) {
+      mainImageLinkEl.addEventListener('click', function(event) {
+        event.preventDefault();
+        if (!lightbox) {
+          return;
+        }
+        if (typeof lightbox.openAt === 'function') {
+          lightbox.openAt(currentImageIndex);
+        } else if (typeof lightbox.open === 'function') {
+          lightbox.open();
+        }
+      });
+    }
+
+    if (lightbox) {
+      // 放大看图时暂停自动轮播，关闭后恢复；翻到哪张，主图就跟到哪张
+      lightbox.on('open', function() {
+        clearInterval(imageInterval);
+      });
+      lightbox.on('close', function() {
+        clearInterval(imageInterval);
+        imageInterval = setInterval(autoSwitchImage, 5000);
+      });
+      lightbox.on('slide_changed', function(data) {
+        if (data && data.current && typeof data.current.slideIndex === 'number') {
+          showImage(data.current.slideIndex);
+        }
+      });
+    }
   </script>
 
   <style>
@@ -428,6 +472,7 @@
     }
     .thumbnail-list {
       display: flex;
+      flex-wrap: wrap;
       gap: 12px;
     }
     .thumbnail {
@@ -508,11 +553,13 @@
     .portfolio-slider .swiper-button-prev:hover {
       background: rgba(255, 107, 138, 0.2);
     }
-    .glightbox {
+    .glightbox,
+    .main-image-link {
       display: block;
       cursor: zoom-in;
     }
-    .glightbox:hover {
+    .glightbox:hover,
+    .main-image-link:hover {
       opacity: 1;
     }
     .gclose, .gnext, .gprev {

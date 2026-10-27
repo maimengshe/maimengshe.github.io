@@ -374,6 +374,14 @@ img {
   animation: float 6s ease-in-out infinite;
 }
 
+/* 主视觉图可点击跳转到看板娘页，尺寸与原来的 <img> 保持一致，不改变版面 */
+.hero-image-link {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  line-height: 0;
+}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -452,6 +460,10 @@ img {
   }
 
   .hero-image img {
+    max-width: 320px;
+  }
+
+  .hero-image-link {
     max-width: 320px;
   }
 }
